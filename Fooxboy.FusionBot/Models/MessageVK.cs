@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Fooxboy.FusionBot.Models
 {
-    public partial class MessageVK
+    public class MessageVK
     {
         [JsonProperty("id")]
         public long Id { get; set; }
@@ -29,7 +29,7 @@ namespace Fooxboy.FusionBot.Models
         public bool Important { get; set; }
         //public Geo geo { get; set; }
         [JsonProperty("payload")]
-        public string Payload { get; set; }
+        public PayLoadModel Payload { get; set; }
         [JsonProperty("fwd_messages")]
         public List<MessageVK> ForwardMessages { get; set; }
         [JsonProperty("action")]

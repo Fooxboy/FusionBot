@@ -10,7 +10,7 @@ namespace Fooxboy.FusionBot.BotsLongPoll
     /// <summary>
     /// Главный класс Bots LongPoll
     /// </summary>
-    public class Updater : IGetUpate
+    public class Updater : IGetUpdates
     {
 
         public event Delegates.NewMessage MessageNewEvent;
