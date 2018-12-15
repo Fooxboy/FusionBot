@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Fooxboy.FusionBot
 {
@@ -22,6 +23,7 @@ namespace Fooxboy.FusionBot
         /// Установка команды.
         /// </summary>
         /// <param name="command">экземпляр команды</param>
+        [Obsolete("Метод устарел, используйте SetCommands. Использовать в случае добавления динамически новой команды.")]
         public void SetCommand(IFusionCommand command)
         {
             if (Globals.Commands is null) Globals.Commands = new List<IFusionCommand>();
@@ -32,10 +34,10 @@ namespace Fooxboy.FusionBot
         /// Установка массива команд
         /// </summary>
         /// <param name="commands">Массив экземпляров команды</param>
-        public void SetCommands(IEnumerable<IFusionCommand> commands)
+        public void SetCommands(params IFusionCommand[] commands)
         {
-            if (Globals.Commands != null) throw new ArgumentException("Список команд не пуст. Добавте сразу все команды.");
-            else Globals.Commands = (List<IFusionCommand>)commands;
+            if (Globals.Commands != null) throw new ArgumentException("Список команд не пуст. Добавте сразу все команды. Или используйте SetCommand");
+            else Globals.Commands = commands.ToList();
         }
 
         

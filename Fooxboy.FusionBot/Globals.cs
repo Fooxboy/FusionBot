@@ -10,5 +10,6 @@ namespace Fooxboy.FusionBot
         public static string TokenGroup { get; set; }
         public static INotCommand NotCommand { get; set; }
         public static IFusionSendMessage Message { get; set; }
+        public static IConvertKeybordVK ConvertKeyboard { get; set; }
     }
 }
