@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,9 @@ namespace Fooxboy.FusionBot.Models
 {
     public class PayLoadModel: IPayLoadModel
     {
-        public string Object { get; set; }
+        [JsonProperty("arguments")]
         public List<string> Arguments { get; set; }
+        [JsonProperty("command")]
+        public string Command { get; set; }
     }
 }
