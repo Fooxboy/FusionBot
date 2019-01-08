@@ -16,7 +16,7 @@ namespace Fooxboy.FusionBot.Models
         [JsonProperty("ref")]
         public string Ref { get; set; }
         [JsonProperty("ref_source")]
-        public string RefSource { get; set }
+        public string RefSource { get; set; }
         [JsonProperty("from_id")]
         public long FromId { get; set; }
         [JsonProperty("text")]
@@ -27,9 +27,9 @@ namespace Fooxboy.FusionBot.Models
         public List<AttachVK> Attachments { get; set; }
         [JsonProperty("important")]
         public bool Important { get; set; }
-        //public Geo geo { get; set; }
         [JsonProperty("payload")]
-        public PayLoadModel Payload { get; set; }
+        public string PayloadString { get; set; }
+        public PayLoadModelFusion Payload { get; set; }
         [JsonProperty("fwd_messages")]
         public List<MessageVK> ForwardMessages { get; set; }
         [JsonProperty("action")]

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fooxboy.FusionBot", "Fooxboy.FusionBot\Fooxboy.FusionBot.csproj", "{6A84F3A4-2272-4E5F-8ECB-76C19B9FDD92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fooxboy.FusionBot", "Fooxboy.FusionBot\Fooxboy.FusionBot.csproj", "{6A84F3A4-2272-4E5F-8ECB-76C19B9FDD92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fooxboy.FusionBotTest", "Fooxboy.FusionBotTest\Fooxboy.FusionBotTest.csproj", "{7FD703BE-C86E-4CF4-AB05-8F5595B1EAB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fooxboy.FusionBot.VkNetSupport", "Fooxboy.FusionBot.VkNetSupport\Fooxboy.FusionBot.VkNetSupport.csproj", "{F932F710-5311-4D25-8DDA-4B70EF8B9ED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6A84F3A4-2272-4E5F-8ECB-76C19B9FDD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A84F3A4-2272-4E5F-8ECB-76C19B9FDD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A84F3A4-2272-4E5F-8ECB-76C19B9FDD92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD703BE-C86E-4CF4-AB05-8F5595B1EAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD703BE-C86E-4CF4-AB05-8F5595B1EAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD703BE-C86E-4CF4-AB05-8F5595B1EAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD703BE-C86E-4CF4-AB05-8F5595B1EAB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F932F710-5311-4D25-8DDA-4B70EF8B9ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F932F710-5311-4D25-8DDA-4B70EF8B9ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F932F710-5311-4D25-8DDA-4B70EF8B9ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F932F710-5311-4D25-8DDA-4B70EF8B9ED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Fooxboy.FusionBot
 {
@@ -49,8 +50,9 @@ namespace Fooxboy.FusionBot
         /// <returns></returns>
         public bool Start(object token, long groupId)
         {
-            updater.Start(token, groupId);
+            Globals.TokenGroup = (string)token;
             updater.MessageNewEvent += NewMessage;
+            Task.Run(() => updater.Start(token, groupId));
             return true;
         }
 

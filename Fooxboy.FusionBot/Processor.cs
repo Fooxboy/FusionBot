@@ -4,19 +4,27 @@ using System.Text;
 using System.Linq;
 using Fooxboy.FusionBot.Models;
 using Fooxboy.FusionBot.Models.Response;
+using Newtonsoft.Json;
 
 namespace Fooxboy.FusionBot
 {
     public static partial class Processor
     {
-        public static IFusionCommand FindCommand(string command)=> Globals.Commands.Find(c => c.Command == command);
+        public static IFusionCommand FindCommand(string command)=> Globals.Commands.Find(c => c.Command.ToLower() == command.ToLower());
 
 
         public static void StartProcessor(MessageVK message)
         {
             var actionText = String.Empty;
-            if (message.Payload == null) actionText = message.Text.Split(' ')[0];
+            if (message.PayloadString == null) actionText = message.Text.Split(' ')[0];
+            else
+            {
+                message.Payload = JsonConvert.DeserializeObject<PayLoadModelFusion>(message.PayloadString);
+                actionText = message.Payload.Command;
+            }
+
             var command = FindCommand(actionText);
+            if (command is null) Globals.NotCommand.Action(actionText);
             ExecuteCommand(command, message);
         }
 

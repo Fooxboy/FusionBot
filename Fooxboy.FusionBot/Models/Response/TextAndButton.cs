@@ -7,6 +7,6 @@ namespace Fooxboy.FusionBot.Models.Response
     public class TextAndButtons
     {
         public string Text { get; set; }
-        public IMessageKeyboardVK Keyboard { get; set; }
+        public object Keyboard { get; set; }
     }
 }

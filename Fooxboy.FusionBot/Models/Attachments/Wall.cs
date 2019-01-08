@@ -16,8 +16,6 @@ namespace Fooxboy.FusionBot.Models.Attachments
         public long ToId { get; set; }
         [JsonProperty("from_id")]
         public long FromId { get; set; }
-        [JsonProperty("to_id")]
-        public long ToId { get; set; }
         [JsonProperty("created_by")]
         public long CreatedBy { get; set; }
         [JsonProperty("date")]
@@ -43,7 +41,7 @@ namespace Fooxboy.FusionBot.Models.Attachments
         [JsonProperty("post_source")]
         public object PostSource { get; set; }
         [JsonProperty("attachments")]
-        public List<Attach> attachments { get; set; }
+        public List<AttachVK> attachments { get; set; }
         //public Geo geo { get; set; }
         [JsonProperty("signer_id")]
         public long SignerId { get; set; }

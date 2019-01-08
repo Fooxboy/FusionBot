@@ -7,9 +7,9 @@ namespace Fooxboy.FusionBot
 {
     public interface IFusionCommand
     {
-        string PrivateName { get; set; }
-        string Command { get; set; }
-        TypeResponse TypeResponse { get; set; }
+        string PrivateName { get; }
+        string Command { get; }
+        TypeResponse TypeResponse { get; }
 
         object Execute(MessageVK message);
     }

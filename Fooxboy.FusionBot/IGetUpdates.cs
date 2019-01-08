@@ -17,10 +17,10 @@ namespace Fooxboy.FusionBot
         /// </summary>
         void Stop();
 
-        public event Delegates.NewMessage MessageNewEvent;
-        public event Delegates.NewMessage MessageReplyEvent;
-        public event Delegates.NewMessage MessageEditEvent;
-        public event Delegates.MessageAllowOrDeny MessageAllowEvent;
-        public event Delegates.MessageAllowOrDeny MessageDenyEvent;
+        event Delegates.NewMessage MessageNewEvent;
+        event Delegates.NewMessage MessageReplyEvent;
+        event Delegates.NewMessage MessageEditEvent;
+        event Delegates.MessageAllowOrDeny MessageAllowEvent;
+        event Delegates.MessageAllowOrDeny MessageDenyEvent;
     }
 }

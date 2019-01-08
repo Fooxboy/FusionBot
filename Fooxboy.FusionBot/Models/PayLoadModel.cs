@@ -5,10 +5,17 @@ using System.Text;
 
 namespace Fooxboy.FusionBot.Models
 {
-    public class PayLoadModel: IPayLoadModel
+    [Serializable]
+    public class PayLoadModel
+    {
+        public PayLoadModelFusion Fusion { get; set; }
+    }
+
+    [Serializable]
+    public class PayLoadModelFusion 
     {
         [JsonProperty("arguments")]
-        public List<string> Arguments { get; set; }
+        public List<object> Arguments { get; set; }
         [JsonProperty("command")]
         public string Command { get; set; }
     }

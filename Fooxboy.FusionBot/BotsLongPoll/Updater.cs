@@ -38,6 +38,7 @@ namespace Fooxboy.FusionBot.BotsLongPoll
         /// <param name="groupId">Индетификатор сообщества</param>
         public void Start(object token, long groupId)
         {
+            Console.WriteLine("updater started");
             if (groupId == 0) throw new ArgumentNullException("Невозможно начать получение обновлений. GroupId не может быть 0");
             if (!(token is string)) throw new ArgumentException("Невозможно начать получение обновлений. Token должен быть System.String");
             if (token is null) throw new ArgumentNullException("Невозможно начать получение обновений. Укажите токен сообщества.");
@@ -80,8 +81,8 @@ namespace Fooxboy.FusionBot.BotsLongPoll
         {
             while(_isStarted)
             {
-                try
-                {
+               // try
+                //{
 
                     var json = Request();
                     if(json != null)
@@ -138,10 +139,10 @@ namespace Fooxboy.FusionBot.BotsLongPoll
                         }
                     }
 
-                }catch(Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                //}catch(Exception e)
+                //{
+                //    Console.WriteLine(e.Message);
+                //}
             }
         }
 
