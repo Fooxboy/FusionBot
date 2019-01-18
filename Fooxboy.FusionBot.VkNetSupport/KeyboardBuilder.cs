@@ -30,6 +30,11 @@ namespace Fooxboy.FusionBot.VkNetSupport
             return this;
         }
 
+        public void AddButton(string v, PayloadBuilder payloadBuilder, object keyboardButionColor)
+        {
+            throw new NotImplementedException();
+        }
+
         public KeyboardBuilder AddLine()
         {
             fullKeyboard.Add(currentLine);

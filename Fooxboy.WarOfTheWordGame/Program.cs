@@ -18,7 +18,7 @@ namespace Fooxboy.WarOfTheWordGame
                 new Commands.NotCommand(),
                 new FusionBot.VkNetSupport.MessageSend(Globals.AccessToken));
             //Добавление команд.
-            fusion.SetCommands(new Commands.Start());
+            fusion.SetCommands(new Commands.StartCommand(), new Commands.HomeCommand());
 
             //авторизация Во ВКонтакте.
             var vk = new VkApi();

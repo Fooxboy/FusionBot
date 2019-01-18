@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Fooxboy.WarOfTheWordGame.Commands
 {
-    public class Start : IFusionCommand
+    public class StartCommand : IFusionCommand
     {
         public string PrivateName => "Старт";
 
@@ -24,7 +24,7 @@ namespace Fooxboy.WarOfTheWordGame.Commands
         {
             var response = new TextAndButtons();
 
-
+            //старая версия
             //поддержка аргументов
             var payload = message.Payload;
             if (payload.Arguments != null || payload.Arguments.Count != 0)
@@ -41,7 +41,7 @@ namespace Fooxboy.WarOfTheWordGame.Commands
             using (var db = new Databases.UsersDB())
             {
                
-                db.Info.Add(new Databases.Users.Info() { VKId = message.PeerId, BirthDate = user[0].BirthDate, Name = user[0].FirstName, RegisterDate = DateTime.Now.ToFileTimeUtc() });
+                db.Info.Add(new Databases.Users.Info() { VKId = message.PeerId, BirthDate = user[0].BirthDate, Name = user[0].FirstName, RegisterDate = DateTime.Now.ToFileTimeUtc(), BattleId = 0 });
                 db.SaveChanges();
             }
 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Fooxboy.WarOfTheWordGame.Commands
+namespace Fooxboy.WarOfTheWordGame.Commands.Battle
 {
-    class Home
+    public class Find
     {
     }
 }
