@@ -24,7 +24,7 @@ namespace Fooxboy.FusionBot
             }
 
             var command = FindCommand(actionText);
-            if (command is null) Globals.NotCommand.Action(actionText);
+            if (command is null) command = Globals.NotCommand;
             ExecuteCommand(command, message);
         }
 

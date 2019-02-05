@@ -16,4 +16,12 @@
     <ProjectReference Include="..\Fooxboy.FusionBot\Fooxboy.FusionBot.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Army\Tanks\" />
+    <Folder Include="Army\Ships\" />
+    <Folder Include="Army\Aircraft\" />
+    <Folder Include="Army\Vip\" />
+    <Folder Include="Army\Deluxe\" />
+  </ItemGroup>
+
 </Project>

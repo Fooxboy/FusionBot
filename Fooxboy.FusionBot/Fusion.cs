@@ -13,7 +13,7 @@ namespace Fooxboy.FusionBot
     {
         IGetUpdates updater;
 
-        public Fusion(IGetUpdates upd, INotCommand notCommand, IFusionSendMessage sendMessage)
+        public Fusion(IGetUpdates upd, IFusionCommand notCommand, IFusionSendMessage sendMessage)
         {
             updater = upd;
             Globals.Message = sendMessage;

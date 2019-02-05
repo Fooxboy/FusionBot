@@ -29,7 +29,12 @@ namespace Fooxboy.WarOfTheWordGame.Commands
             var text = "Давай пойдем в бой? Цена боя: ";
             var keyboardBuilder = new KeyboardBuilder();
             keyboardBuilder.AddButton("В бой!", new PayloadBuilder("battle", new List<object>() { "find" }), KeyboardButtonColor.Primary);
-            return null;
+            keyboardBuilder.AddLine();
+            keyboardBuilder.AddButton("В бой!", new PayloadBuilder("home"), KeyboardButtonColor.Primary);
+            var keyboard = keyboardBuilder.Build();
+            response.Keyboard = keyboard;
+            response.Text = text;
+            return response;
         }
     }
 }

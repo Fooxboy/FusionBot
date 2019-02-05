@@ -1,10 +1,5 @@
 {
-  "exclude": [
-    "**/bin",
-    "**/bower_components",
-    "**/jspm_packages",
-    "**/node_modules",
-    "**/obj",
-    "**/platforms"
-  ]
+  "version": "0.1",
+  "access_token": "zazaz",
+  "group_id":  "1234"
 }

@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Fooxboy.WarOfTheWordGame.Army.Infantry
+{
+    public class Archers : IInfantry
+    {
+        public override int Id => 6;
+        public override string Name => "Лучники";
+
+        public override int Level { get; set; } = 1;
+        public override int Hp { get; set; } = 0;
+        public override int[] Damage { get; set; } = { 0 };
+        public override int[] Speed { get; set; } = { 5 };
+        public override int[] Recharge { get; set; } = { 5 };
+        public override int TypeShoot { get; set; } = 5;
+    }
+}
