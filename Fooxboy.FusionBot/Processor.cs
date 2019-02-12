@@ -33,20 +33,20 @@ namespace Fooxboy.FusionBot
             if (command.TypeResponse == TypeResponse.Text)
             {
                 var result = command.Execute(msg) as String;
-                Globals.Message.SendText(result, msg.PeerId, from: msg.FromId);
+                Globals.Message.SendText(result, msg.PeerId);
             }else if(command.TypeResponse == TypeResponse.TextAndButtons)
             {
                 var result = command.Execute(msg) as TextAndButtons;
-                Globals.Message.SendText(result.Text, msg.FromId, result.Keyboard, msg.FromId);
+                Globals.Message.SendText(result.Text, msg.FromId, result.Keyboard);
             }else if(command.TypeResponse == TypeResponse.PhotoAndButtons)
             {
                 var result = command.Execute(msg) as PhotoAndButtons;
-                Globals.Message.SendImage(result.Photo, msg.PeerId, result.Keyboard, msg.FromId);
+                Globals.Message.SendImage(result.Photo, msg.PeerId, result.Keyboard);
 
             }else if(command.TypeResponse == TypeResponse.TextAndPhotoAndButtions)
             {
                 var result = command.Execute(msg) as TextAndPhotoAndButtons;
-                Globals.Message.SendImageAndText(result.Photo, result.Text, msg.PeerId, result.Keyboard, msg.FromId);
+                Globals.Message.SendImageAndText(result.Photo, result.Text, msg.PeerId, result.Keyboard);
             }else if(command.TypeResponse == TypeResponse.Photo)
             {
                 //TODO: отправка фотографии

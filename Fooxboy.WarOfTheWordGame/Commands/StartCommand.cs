@@ -42,6 +42,8 @@ namespace Fooxboy.WarOfTheWordGame.Commands
             {
                
                 db.Info.Add(new Databases.Users.Info() { VKId = message.PeerId, BirthDate = user[0].BirthDate, Name = user[0].FirstName, RegisterDate = DateTime.Now.ToFileTimeUtc(), BattleId = 0 });
+                db.Now.Add(new Databases.Users.Now() {UserId = message.PeerId, Arguments= "null", Command = "null" });
+                db.Army.Add(new Databases.Users.Army() { Id = message.PeerId, All = "a", Select = "a" });
                 db.SaveChanges();
             }
 

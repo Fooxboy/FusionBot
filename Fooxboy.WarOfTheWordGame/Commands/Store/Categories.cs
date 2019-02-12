@@ -5,6 +5,7 @@ using Fooxboy.FusionBot.VkNetSupport;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using VkNet.Enums.SafetyEnums;
 
 namespace Fooxboy.WarOfTheWordGame.Commands.Store
 {

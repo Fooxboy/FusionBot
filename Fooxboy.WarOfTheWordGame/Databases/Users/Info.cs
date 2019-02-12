@@ -15,5 +15,10 @@ namespace Fooxboy.WarOfTheWordGame.Databases.Users
         public long BattleId { get; set; }
         public long Money { get; set; }
         public long GoldMoney { get; set; }
+        public bool Online { get; set; }
+        public long LastSeen { get; set; }
+
+        public bool WaitBattle { get; set; }
+        public long WaitId { get; set; }
     }
 }
