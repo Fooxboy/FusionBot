@@ -53,6 +53,9 @@ namespace Fooxboy.FusionBot
             }else if(command.TypeResponse == TypeResponse.TextAndPhoto) 
             {
                 //TODO: отправка фотографии с текстом.
+            }else
+            {
+                throw new Exception("Я не могу обработать эту команду, потому что она имеет неверный тип ответа.");
             }
         }
     }
