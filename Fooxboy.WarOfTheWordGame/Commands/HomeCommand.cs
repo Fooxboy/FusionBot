@@ -1,9 +1,11 @@
 ﻿using Fooxboy.FusionBot;
 using Fooxboy.FusionBot.Models;
+using Fooxboy.FusionBot.Models.Response;
 using Fooxboy.FusionBot.VkNetSupport;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using VkNet.Enums.SafetyEnums;
 
 namespace Fooxboy.WarOfTheWordGame.Commands
 {
@@ -17,9 +19,16 @@ namespace Fooxboy.WarOfTheWordGame.Commands
 
         public object Execute(MessageVK message)
         {
+            var response = new TextAndButtons();
             var text = "Выберите необходимый раздел";
             var keyboardBuilder = new KeyboardBuilder();
-            throw new NotImplementedException();
+            keyboardBuilder.AddButton("В бой", PayloadBuilder.BuildStatic("battle"), KeyboardButtonColor.Primary);
+            keyboardBuilder.AddLine();
+            keyboardBuilder.AddButton("Магазин", PayloadBuilder.BuildStatic("store"), KeyboardButtonColor.Default);
+            var keyboard = keyboardBuilder.Build();
+            response.Keyboard = keyboard;
+            response.Text = text;
+            return response;
         }
     }
 }

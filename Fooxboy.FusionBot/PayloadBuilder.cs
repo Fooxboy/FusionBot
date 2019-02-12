@@ -24,7 +24,16 @@ namespace Fooxboy.FusionBot
         public Models.PayLoadModelFusion Build() => model;
         public string BuildToString() =>  JsonConvert.SerializeObject(model); 
         public override string ToString() => BuildToString();
-        public static string BuildStatic(string command, List<object> arguments)
+        public static Models.PayLoadModelFusion BuildStatic(string command, List<object> arguments = null)
+        {
+            var model = new Models.PayLoadModelFusion();
+            if (arguments is null) arguments = new List<object>();
+            model.Arguments = arguments;
+            model.Command = command;
+            return model;
+        }
+
+        public static string BuildStaticString(string command, List<object> arguments = null)
         {
             var model = new Models.PayLoadModelFusion();
             if (arguments is null) arguments = new List<object>();

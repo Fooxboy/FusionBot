@@ -78,5 +78,33 @@ namespace Fooxboy.WarOfTheWordGame
 
             return messageButton;
         }
+
+        public static MessageKeyboardButton ButtonBuyUnit(long id)
+        {
+            var messageButton = new MessageKeyboardButton();
+            messageButton.Action = new MessageKeyboardButtonAction()
+            {
+                Label = "Купить",
+                Payload = new PayloadBuilder("store", new List<object>() { "buyAccept", id.ToString() }).BuildToString(),
+                Type = KeyboardButtonActionType.Text
+            };
+            messageButton.Color = KeyboardButtonColor.Positive;
+
+            return messageButton;
+        }
+
+        public static MessageKeyboardButton ButtonInfoUnit(long id)
+        {
+            var messageButton = new MessageKeyboardButton();
+            messageButton.Action = new MessageKeyboardButtonAction()
+            {
+                Label = "Купить",
+                Payload = new PayloadBuilder("store", new List<object>() { "infoUnit", id.ToString() }).BuildToString(),
+                Type = KeyboardButtonActionType.Text
+            };
+            messageButton.Color = KeyboardButtonColor.Default;
+
+            return messageButton;
+        }
     }
 }

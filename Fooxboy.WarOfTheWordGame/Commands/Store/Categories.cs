@@ -2,6 +2,7 @@
 using Fooxboy.FusionBot.Models;
 using Fooxboy.FusionBot.Models.Response;
 using Fooxboy.FusionBot.VkNetSupport;
+using Fooxboy.WarOfTheWordGame.Army.Infantry;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,19 +12,31 @@ namespace Fooxboy.WarOfTheWordGame.Commands.Store
 {
     public class Categories
     {
+        [Argument("infantry")]
         public TextAndButtons Infantry(MessageVK msg, object data)
         {
             var response = new TextAndButtons();
 
+            var infantry = Globals.Infantry;
+            
+
             var keyboardBuilder = new KeyboardBuilder();
 
-            var types = new Dictionary<int, string>();
-            types.Add(1, "addfg");
-            types.Add(2, "ofjigsd");
-            types.Add(3, "2e23346");
-            keyboardBuilder.AddButton("ебать смешно", new PayloadBuilder("store", new List<object>() { "infantry" }), KeyboardButtonColor.Primary);
+            int buffer = 0;
+            foreach(var inf in infantry)
+            {
+                if(buffer == 2)
+                {
+                    keyboardBuilder.AddLine();
+                    buffer = 0;
+                }
+                keyboardBuilder.AddButton(inf.Name, PayloadBuilder.BuildStatic("store", new List<object>() { "buyArmy", inf.Id.ToString()}), KeyboardButtonColor.Default);
+                buffer++;
+            }
 
-            //TODO: дописать логику.
+            response.Keyboard = keyboardBuilder.Build();
+            response.Text = "Выбери необходимого бойца!";
+
             return response; 
         }
     }
